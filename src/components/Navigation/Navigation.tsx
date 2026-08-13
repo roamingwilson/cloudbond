@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./Navigation.module.css";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Moon, Sun } from "lucide-react";
 
 interface NavigationProps {
   onJoinClick?: () => void;
@@ -34,6 +34,19 @@ export const CloudBondLogoIcon: React.FC<{ size?: number; className?: string }> 
 export const Navigation: React.FC<NavigationProps> = ({ onJoinClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const currentTheme = document.documentElement.dataset.theme;
+    if (currentTheme === "dark" || currentTheme === "light") setTheme(currentTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = nextTheme;
+    document.cookie = `theme=${nextTheme}; path=/; max-age=31536000; samesite=lax`;
+    setTheme(nextTheme);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,6 +103,15 @@ export const Navigation: React.FC<NavigationProps> = ({ onJoinClick }) => {
             </nav>
 
             <div className={styles.actions}>
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className={styles.themeToggle}
+                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              >
+                {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
               <button
                 onClick={onJoinClick}
                 className={styles.signInBtn}
@@ -151,6 +173,10 @@ export const Navigation: React.FC<NavigationProps> = ({ onJoinClick }) => {
             </li>
           </ul>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "0.5rem" }}>
+            <button onClick={toggleTheme} className={styles.mobileThemeBtn}>
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+              <span>Use {theme === "dark" ? "light" : "dark"} mode</span>
+            </button>
             <button onClick={() => { setMobileOpen(false); onJoinClick?.(); }} className={styles.signInBtn}>
               Sign in
             </button>

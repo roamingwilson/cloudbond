@@ -66,6 +66,47 @@
   --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #11110f;
+  --canvas-alt: #181815;
+  --surface-card: #1d1d1a;
+  --surface-card-hover: #252521;
+  --surface-dark: #0b0b0a;
+  --surface-dark-card: #171714;
+  --surface-darker: #070706;
+  --ink: #f4f1e9;
+  --ink-soft: #c2beb5;
+  --ink-muted: #969187;
+  --ink-subtle: #716d65;
+  --white: #fffdf8;
+  --white-muted: #d5d0c6;
+  --accent-purple-light: #2c1b4d;
+  --accent-purple-border: #6845a5;
+  --emerald-light: #123b2c;
+  --emerald-border: #1b805b;
+  --amber-light: #3d2c12;
+  --amber-border: #9a6c18;
+  --blue-light: #172c54;
+  --border: #393832;
+  --border-subtle: rgba(244, 241, 233, 0.1);
+  --border-strong: #555248;
+  --border-dark: #3e3e38;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.34);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.44);
+}
+
+html[data-theme="dark"] body {
+  background-color: var(--canvas);
+}
+
+html[data-theme="dark"] ::selection {
+  background-color: #4c2b80;
+  color: var(--ink);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -73,6 +114,7 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;

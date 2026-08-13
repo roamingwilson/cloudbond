@@ -10,7 +10,7 @@
 
 .scrolled {
   padding: 0.85rem 0;
-  background-color: rgba(248, 246, 240, 0.88);
+  background-color: color-mix(in srgb, var(--canvas) 88%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(20, 20, 18, 0.06);
@@ -62,6 +62,24 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--ink-soft);
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.themeToggle:hover {
+  color: var(--ink);
+  background-color: var(--surface-card);
+  border-color: var(--border-strong);
 }
 
 .signInBtn {
@@ -149,5 +167,16 @@
     font-size: 1rem;
     font-weight: 600;
     color: var(--ink);
+  }
+
+  .mobileThemeBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
   }
 }
