@@ -1,0 +1,130 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  font-family: var(--font-sans-family);
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Primary Variant — Sage / Earth Dark */
+.primary {
+  background-color: var(--ink);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--ink);
+}
+
+.primary:hover {
+  background-color: #2D2D29;
+  border-color: #2D2D29;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Sage Accent Variant */
+.sage {
+  background-color: var(--sage);
+  color: #FFFFFF;
+  border: 1px solid var(--sage);
+  box-shadow: 0 4px 16px rgba(46, 107, 74, 0.25);
+}
+
+.sage:hover {
+  background-color: var(--sage-hover);
+  border-color: var(--sage-hover);
+  box-shadow: 0 6px 20px rgba(46, 107, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Secondary Variant — Outline Warm */
+.secondary {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+}
+
+.secondary:hover {
+  background-color: var(--canvas-alt);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* Dark Mode Secondary Variant */
+.secondaryDark {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  border: 1px solid var(--border-dark);
+}
+
+.secondaryDark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Ghost Variant */
+.ghost {
+  background-color: transparent;
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+}
+
+.ghost:hover {
+  color: var(--ink);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Size Adjustments */
+.small {
+  font-size: 0.85rem;
+  padding: 0.6rem 1.1rem;
+}
+
+.large {
+  font-size: 1.05rem;
+  padding: 1.05rem 2.2rem;
+  border-radius: var(--radius-pill);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal);
+}
+
+.button:hover .iconWrapper {
+  transform: translateX(3px);
+}

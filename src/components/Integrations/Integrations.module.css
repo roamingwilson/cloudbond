@@ -1,0 +1,182 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--canvas-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+
+.kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.headline {
+  font-family: var(--font-serif-family);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.serifItalic {
+  font-family: var(--font-serif-family);
+  font-style: italic;
+}
+
+.subheadline {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.pipelineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.toolsBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.toolBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.toolBadge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+.toolIcon {
+  font-size: 0.95rem;
+}
+
+.toolName {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Flow Surface */
+.flowSurface {
+  background: #FFFFFF;
+  border: 1px solid rgba(20, 20, 18, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.flowNode {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--radius-md);
+}
+
+.nodeIcon {
+  color: var(--ink);
+}
+
+.nodeText {
+  display: flex;
+  flex-direction: column;
+}
+
+.nodeTitle {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.nodeSub {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+}
+
+.flowNodeCenter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--ink);
+  color: #FFFFFF;
+  padding: 0.85rem 1.45rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.nodeTitleCenter {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.nodeSubCenter {
+  font-size: 0.76rem;
+  color: var(--white-muted);
+}
+
+.flowPath {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--accent-purple);
+  flex: 1;
+  justify-content: center;
+}
+
+.pathLine {
+  height: 2px;
+  width: 60%;
+  background: var(--accent-purple-border);
+}
+
+.pathArrow {
+  color: var(--accent-purple);
+}
+
+@media (max-width: 900px) {
+  .flowSurface {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .flowPath {
+    transform: rotate(90deg);
+    margin: 0.5rem 0;
+  }
+}

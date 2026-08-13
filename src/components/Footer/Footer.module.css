@@ -1,0 +1,212 @@
+.footer {
+  background-color: var(--canvas);
+  position: relative;
+}
+
+.ctaSection {
+  padding: 6rem 0 3rem 0;
+}
+
+.ctaCard {
+  background: var(--canvas-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.ctaHeadline {
+  font-family: var(--font-serif-family);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.serifItalic {
+  font-family: var(--font-serif-family);
+  font-style: italic;
+}
+
+.ctaSubtext {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+
+.ctaButtonsRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--ink);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.75rem 1.45rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.primaryCta:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.primaryCta:hover svg {
+  transform: translateX(3px);
+}
+
+.primaryCta svg {
+  transition: transform var(--transition-fast);
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  transition: all var(--transition-fast);
+}
+
+.secondaryCta:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.bottomFooter {
+  padding: 4rem 0 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 320px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.tagline {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.navCols {
+  display: flex;
+  gap: 4rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.colTitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.linkList a {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  transition: color var(--transition-fast);
+}
+
+.linkList a:hover {
+  color: var(--ink);
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.legalLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legalLinks a {
+  color: var(--ink-muted);
+  transition: color var(--transition-fast);
+}
+
+.legalLinks a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .topRow {
+    flex-direction: column;
+  }
+  .navCols {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .bottomRow {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .ctaButtonsRow {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+  .primaryCta, .secondaryCta {
+    width: 100%;
+    justify-content: center;
+  }
+}
