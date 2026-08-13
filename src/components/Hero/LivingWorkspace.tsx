@@ -361,8 +361,10 @@ export const LivingWorkspace: React.FC<{ onJoinClick?: () => void }> = () => {
           {chips.map((chip, i) => (
             <button
               key={i}
+              type="button"
               className={styles.chipPill}
               onClick={() => triggerExecution(`Handle my ${chip.label}`)}
+              aria-label={`Run Cloud Bond command: Handle my ${chip.label}`}
             >
               <span className={styles.chipIcon}>{chip.icon}</span>
               <span>{chip.label}</span>

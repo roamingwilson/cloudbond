@@ -97,7 +97,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background-color: var(--ink);
+  background-color: var(--accent-purple);
   color: var(--white);
   font-size: 0.88rem;
   font-weight: 500;
@@ -108,7 +108,7 @@
 }
 
 .ctaBtn:hover {
-  background-color: #000000;
+  background-color: var(--accent-purple-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }

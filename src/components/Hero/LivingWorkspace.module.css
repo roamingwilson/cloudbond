@@ -114,26 +114,53 @@
 }
 
 .chipPill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: color-mix(in srgb, var(--surface-card) 82%, transparent);
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent-purple-light) 72%, var(--surface-card));
+  border: 1px solid var(--accent-purple-border);
   border-radius: var(--radius-pill);
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.75rem;
   font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--ink-soft);
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
   backdrop-filter: blur(8px);
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.chipPill:hover {
-  background: var(--surface-card);
+.chipPill::after {
+  content: "Run";
+  margin-left: 0.25rem;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--font-mono-family);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.62;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.chipPill:hover,
+.chipPill:focus-visible {
+  background: var(--accent-purple-light);
   color: var(--ink);
-  border-color: var(--border-strong);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--accent-purple-border);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-purple) 22%, transparent);
+}
+
+.chipPill:hover::after,
+.chipPill:focus-visible::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.chipPill:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .chipIcon {
