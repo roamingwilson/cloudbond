@@ -72,6 +72,70 @@
   color: var(--ink);
 }
 
+.moreNavItem {
+  position: relative;
+}
+
+.moreNav {
+  position: relative;
+}
+
+.moreNav summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.moreNav summary::-webkit-details-marker {
+  display: none;
+}
+
+.moreNav summary::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--transition-fast);
+}
+
+.moreNav[open] summary::after {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+.moreMenu {
+  position: absolute;
+  top: calc(100% + 0.85rem);
+  right: -0.75rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  gap: 0.2rem;
+  padding: 0.45rem;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.moreMenu a {
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.moreMenu a:hover {
+  color: var(--ink);
+  background: var(--surface-card-hover);
+}
+
 .actions {
   display: flex;
   align-items: center;

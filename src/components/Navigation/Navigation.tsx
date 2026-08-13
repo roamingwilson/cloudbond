@@ -84,20 +84,15 @@ export const Navigation: React.FC<NavigationProps> = ({ onJoinClick }) => {
                     Integrations
                   </a>
                 </li>
-                <li>
-                  <a href="#security" className={styles.navLink}>
-                    Security
-                  </a>
-                </li>
-                <li>
-                  <a href="#resources" className={styles.navLink}>
-                    Resources
-                  </a>
-                </li>
-                <li>
-                  <a href="#pricing" className={styles.navLink}>
-                    Pricing
-                  </a>
+                <li className={styles.moreNavItem}>
+                  <details className={styles.moreNav}>
+                    <summary className={styles.navLink}>Explore</summary>
+                    <div className={styles.moreMenu}>
+                      <a href="#security">Security</a>
+                      <a href="#resources">Resources</a>
+                      <a href="#pricing">Pricing</a>
+                    </div>
+                  </details>
                 </li>
               </ul>
             </nav>
