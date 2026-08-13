@@ -13,7 +13,7 @@
 }
 
 .modal {
-  background: #FFFFFF;
+  background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   width: 100%;
@@ -64,7 +64,7 @@
 
 .closeBtn:hover {
   color: var(--ink);
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--surface-card-hover);
 }
 
 .body {
@@ -134,7 +134,7 @@
   align-items: center;
   gap: 0.35rem;
   font-size: 0.78rem;
-  background: #F3EEFF;
+  background: var(--accent-purple-light);
   color: var(--accent-purple);
   border: 1px solid var(--accent-purple-border);
   padding: 0.25rem 0.65rem;
@@ -168,7 +168,7 @@
   font-size: 0.9rem;
   line-height: 1.55;
   color: var(--ink);
-  background: #FFFFFF;
+  background: var(--surface-card);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   padding: 0.85rem 1rem;
@@ -202,7 +202,7 @@
 }
 
 .cancelBtn:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--surface-card-hover);
   color: var(--ink);
 }
 

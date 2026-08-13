@@ -114,7 +114,7 @@ html[data-theme="dark"] ::selection {
 }
 
 html {
-  color-scheme: light;
+  color-scheme: light dark;
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -127,13 +127,11 @@ body {
   font-family: var(--font-sans-family);
   line-height: 1.5;
   overflow-x: hidden;
-  selection-background-color: #E9D5FF;
-  selection-color: #141412;
 }
 
 ::selection {
-  background-color: #E9D5FF;
-  color: #141412;
+  background-color: var(--accent-purple-light);
+  color: var(--ink);
 }
 
 a {

@@ -51,7 +51,7 @@
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--ink-soft);
-  background: rgba(255, 255, 255, 0.8);
+  background: color-mix(in srgb, var(--surface-card) 88%, transparent);
   border: 1px solid var(--border);
   padding: 0.6rem 1.25rem;
   border-radius: var(--radius-pill);
@@ -59,7 +59,7 @@
 }
 
 .tabBtn:hover {
-  background: #FFFFFF;
+  background: var(--surface-card);
   color: var(--ink);
   border-color: var(--border-strong);
 }
@@ -72,7 +72,7 @@
 }
 
 .demoCard {
-  background: #FFFFFF;
+  background: var(--surface-card);
   border: 1px solid rgba(20, 20, 18, 0.09);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -206,7 +206,7 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--accent-purple);
-  background: #F3EEFF;
+  background: var(--accent-purple-light);
   border: 1px solid var(--accent-purple-border);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-pill);
@@ -214,7 +214,7 @@
 }
 
 .btnReview:hover {
-  background: #EDE5FF;
+  background: var(--accent-purple-light);
   transform: translateY(-1px);
 }
 

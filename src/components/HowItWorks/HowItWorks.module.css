@@ -60,22 +60,22 @@
   align-items: flex-start;
   gap: 1.25rem;
   padding: 1.25rem;
-  background: #FFFFFF;
-  border: 1px solid rgba(20, 20, 18, 0.08);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   text-align: left;
   transition: all var(--transition-normal);
 }
 
 .stageTab:hover {
-  border-color: rgba(20, 20, 18, 0.18);
+  border-color: var(--border-strong);
   transform: translateX(4px);
 }
 
 .stageTabActive {
   border-color: var(--accent-purple);
   box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
-  background: #FFFFFF;
+  background: var(--surface-card);
 }
 
 .tabNumber {
@@ -83,7 +83,7 @@
   font-size: 1rem;
   font-weight: 700;
   color: var(--accent-purple);
-  background: #F3EEFF;
+  background: var(--accent-purple-light);
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius-sm);
 }
@@ -130,7 +130,7 @@
 .previewWindow {
   width: 100%;
   max-width: 540px;
-  background: #FFFFFF;
+  background: var(--surface-card);
   border: 1px solid rgba(20, 20, 18, 0.1);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
@@ -219,7 +219,7 @@
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--accent-purple);
-  background: #F3EEFF;
+  background: var(--accent-purple-light);
   border: 1px solid var(--accent-purple-border);
   padding: 0.6rem 1rem;
   border-radius: var(--radius-pill);

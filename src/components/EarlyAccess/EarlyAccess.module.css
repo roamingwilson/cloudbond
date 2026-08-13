@@ -13,7 +13,7 @@
 }
 
 .modalCard {
-  background: #FFFFFF;
+  background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -120,7 +120,7 @@
   padding: 0.7rem 1rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-strong);
-  background-color: #FFFFFF;
+  background-color: var(--surface-card);
   font-family: var(--font-sans-family);
   font-size: 0.92rem;
   color: var(--ink);
