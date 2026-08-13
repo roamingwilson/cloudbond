@@ -20,20 +20,33 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleClose = () => {
+    setError("");
+    setSubmitted(false);
+    setEmail("");
+    setName("");
+    setCompany("");
+    onClose();
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && name) {
-      setSubmitted(true);
+    if (!name.trim() || !email.trim()) {
+      setError("Please add your name and work email to continue.");
+      return;
     }
+    setError("");
+    setSubmitted(true);
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
+    <div className={styles.modalOverlay} onClick={handleClose} role="presentation">
+      <div className={styles.modalCard} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="early-access-title">
+        <button className={styles.closeBtn} onClick={handleClose} aria-label="Close early access form">
           <X size={18} />
         </button>
 
@@ -45,7 +58,7 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
                 <CloudBondLogoIcon size={22} />
               </div>
               <div>
-                <h3 className={styles.modalTitle}>Join Cloud Bond Early Access</h3>
+                <h3 id="early-access-title" className={styles.modalTitle}>Join Cloud Bond Early Access</h3>
                 <p className={styles.modalDesc}>
                   Be among the first professionals to delegate work to an AI employee.
                 </p>
@@ -68,8 +81,9 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
             {/* Form */}
             <form className={styles.modalForm} onSubmit={handleSubmit}>
               <div className={styles.inputGroup}>
-                <label className={styles.inputLabel}>Full Name</label>
+                <label className={styles.inputLabel} htmlFor="early-access-name">Full Name</label>
                 <input
+                  id="early-access-name"
                   type="text"
                   placeholder="Alex Johnson"
                   value={name}
@@ -79,8 +93,9 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label className={styles.inputLabel}>Work Email</label>
+                <label className={styles.inputLabel} htmlFor="early-access-email">Work Email</label>
                 <input
+                  id="early-access-email"
                   type="email"
                   placeholder="alex@company.com"
                   value={email}
@@ -90,8 +105,9 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
                 />
               </div>
               <div className={styles.inputGroup}>
-                <label className={styles.inputLabel}>Company (optional)</label>
+                <label className={styles.inputLabel} htmlFor="early-access-company">Company (optional)</label>
                 <input
+                  id="early-access-company"
                   type="text"
                   placeholder="Acme Inc."
                   value={company}
@@ -99,6 +115,7 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
                   className={styles.input}
                 />
               </div>
+              {error && <p role="alert" style={{ color: "var(--accent-purple)", fontSize: "0.8rem" }}>{error}</p>}
               <button type="submit" className={styles.submitBtn}>
                 <span>Reserve My Access Spot</span>
                 <ArrowRight size={15} />
@@ -112,7 +129,7 @@ export const EarlyAccess: React.FC<EarlyAccessProps> = ({
             </div>
             <h3 className={styles.modalTitle}>Spot Reserved!</h3>
             <p className={styles.modalDesc}>
-              Thank you, {name || "there"}. We've saved your spot for early access.
+              Thank you, {name || "there"}. We&apos;ve saved your spot for early access.
               You will hear from the Wilson Cloud team as soon as onboarding opens.
             </p>
             <button className={styles.closeModalBtn} onClick={onClose}>

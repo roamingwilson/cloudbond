@@ -10,16 +10,27 @@ export const SecondaryDemos: React.FC = () => {
   const [activeModalDraft, setActiveModalDraft] = useState<DraftItem | null>(null);
   const [approvedItems, setApprovedItems] = useState<Record<string, boolean>>({});
 
-  const sampleDraft: DraftItem = {
-    id: "northstar_followup",
-    type: "email",
-    recipient: "Marcus Vance",
-    role: "VP of Engineering",
-    company: "Northstar Technologies",
-    subject: "Re: Security questionnaire & API migration schedule",
-    content:
-      "Hi Marcus,\n\nI reviewed our completed SOC2 Type II compliance audit and updated the API migration roadmap we discussed last Thursday.\n\nAre you available for a 15-min sync tomorrow at 2:00 PM to finalize sign-off?\n\nBest,\nAlex",
-    contextSources: ["Northstar Slack thread #proj-migration", "SOC2 Compliance PDF", "Gmail thread"],
+  const sampleDrafts: Record<string, DraftItem> = {
+    sarah_followup: {
+      id: "sarah_followup",
+      type: "email",
+      recipient: "Sarah Chen",
+      role: "Head of Operations",
+      company: "Acme Inc.",
+      subject: "Re: Pricing follow-up",
+      content: "Hi Sarah,\n\nFollowing up on the pricing discussion. Are you available for a quick sync this week?\n\nBest,\nAlex",
+      contextSources: ["12 Gmail threads", "Acme Notion Spec v2.4", "Calendar sync"],
+    },
+    northstar_followup: {
+      id: "northstar_followup",
+      type: "email",
+      recipient: "Marcus Vance",
+      role: "VP of Engineering",
+      company: "Northstar Technologies",
+      subject: "Re: Security questionnaire & API migration schedule",
+      content: "Hi Marcus,\n\nI reviewed our completed SOC2 Type II compliance audit and updated the API migration roadmap we discussed last Thursday.\n\nAre you available for a 15-min sync tomorrow at 2:00 PM to finalize sign-off?\n\nBest,\nAlex",
+      contextSources: ["Northstar Slack thread #proj-migration", "SOC2 Compliance PDF", "Gmail thread"],
+    },
   };
 
   const handleApprove = (id: string) => {
@@ -62,7 +73,7 @@ export const SecondaryDemos: React.FC = () => {
             <div className={styles.commandHeader}>
               <div className={styles.commandPill}>
                 <Sparkles size={16} className={styles.purpleSparkle} />
-                <span>"Follow up with everyone waiting for a response."</span>
+                <span>&quot;Follow up with everyone waiting for a response.&quot;</span>
               </div>
               <span className={styles.statusBadge}>
                 <CheckCircle2 size={13} /> 7 conversations scanned
@@ -101,7 +112,7 @@ export const SecondaryDemos: React.FC = () => {
                   ) : (
                     <button
                       className={styles.btnReview}
-                      onClick={() => setActiveModalDraft(sampleDraft)}
+                      onClick={() => setActiveModalDraft(sampleDrafts["sarah_followup"])}
                     >
                       <Eye size={13} /> Review draft
                     </button>
@@ -124,7 +135,7 @@ export const SecondaryDemos: React.FC = () => {
                   ) : (
                     <button
                       className={styles.btnReview}
-                      onClick={() => setActiveModalDraft(sampleDraft)}
+                      onClick={() => setActiveModalDraft(sampleDrafts["northstar_followup"])}
                     >
                       <Eye size={13} /> Review draft
                     </button>
@@ -169,7 +180,7 @@ export const SecondaryDemos: React.FC = () => {
             <div className={styles.commandHeader}>
               <div className={styles.commandPill}>
                 <Search size={16} className={styles.purpleSparkle} />
-                <span>"Find everything we have about Acme."</span>
+                <span>&quot;Find everything we have about Acme.&quot;</span>
               </div>
               <span className={styles.statusBadge}>
                 <CheckCircle2 size={13} /> Context Graph Unified

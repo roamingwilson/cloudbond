@@ -340,7 +340,9 @@ export const LivingWorkspace: React.FC<{ onJoinClick?: () => void }> = () => {
             }}
             onBlur={() => setTimeout(() => setIsFocused(false), 200)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") triggerExecution(inputValue);
+              if (e.key === "Enter" && !e.nativeEvent.isComposing && e.keyCode !== 229) {
+                triggerExecution(inputValue);
+              }
             }}
             placeholder="Tell Cloud Bond what needs to get done."
           />
