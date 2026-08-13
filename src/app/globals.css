@@ -42,9 +42,10 @@
   --border-dark: #2A2A26;
 
   /* Typography Variables */
-  --font-serif-family: var(--font-serif), "Playfair Display", Georgia, serif;
-  --font-sans-family: var(--font-sans), "Inter", system-ui, sans-serif;
-  --font-mono-family: var(--font-mono), "JetBrains Mono", monospace;
+  --font-display-family: "Space Grotesk", system-ui, sans-serif;
+  --font-serif-family: var(--font-display-family);
+  --font-sans-family: "DM Sans", system-ui, sans-serif;
+  --font-mono-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* Shadows — Soft Layered Spatial Depth */
   --shadow-sm: 0 2px 6px rgba(20, 20, 18, 0.03);
@@ -171,6 +172,10 @@ img, svg {
 }
 
 /* Typography Classes */
+.font-display {
+  font-family: var(--font-display-family);
+}
+
 .font-serif {
   font-family: var(--font-serif-family);
 }
